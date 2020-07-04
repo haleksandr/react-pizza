@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from "../../assets/img/pizza-logo.svg";
+import Button from './Button/Button';
 
 const Header = (props) => {
     return (
@@ -8,6 +9,7 @@ const Header = (props) => {
                 <div className="header__logo">
                     <img width="38" src={logo} alt="Pizza logo"/>
                     <div>
+                        <Button label={"second"} />
                         <h1>React Pizza</h1>
                         <p>самая вкусная пицца во вселенной</p>
                     </div>
