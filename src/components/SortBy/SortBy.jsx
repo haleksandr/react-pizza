@@ -17,14 +17,14 @@ const SortBy = (props) => {
                             fill="#2C2C2C"
                         />
                     </svg>
-                    <b>Сортировка по:</b>
-                    <span>популярности</span>
+                    <b>Sort by:</b>
+                    <span>popularity</span>
                 </div>
                 <div className="sort__popup">
                     <ul>
-                        <li className="active">популярности</li>
-                        <li>цене</li>
-                        <li>алфавиту</li>
+                        <li className="active">popularuty</li>
+                        <li>price</li>
+                        <li>alphabetically</li>
                     </ul>
                 </div>
             </div>
