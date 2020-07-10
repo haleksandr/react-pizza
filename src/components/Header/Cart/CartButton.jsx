@@ -2,10 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 
 
-const Button = (props) => {
+const CartButton = (props) => {
     return (
         <a href="/cart.html" className="button button--cart">
-            <span>520 ₽</span>
+            <span>37 $</span>
             <div className="button__delimiter"></div>
             <svg
                 width="18"
@@ -41,4 +41,4 @@ const Button = (props) => {
     )
 }
 
-export default Button;
+export default CartButton;
