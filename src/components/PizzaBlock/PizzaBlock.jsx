@@ -1,13 +1,23 @@
 import React, {useState} from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const PizzaBlock = (props) => {
 
-    const [activeType, setActiveType] = useState(1);
+    const [activeType, setActiveType] = useState(props.types[0]);
+    const [activeSize, setActiveSize] = useState(1);
 
-    const types = ['thin', 'traditional'];
+    const availableTypes = ['thin', 'traditional'];
+    const availableSizes = [26, 30, 40];
+
+    console.log(availableSizes, availableTypes);
 
     const onSelectType = (index) => {
         setActiveType(index);
+    };
+
+    const onSelectSize = (index) => {
+        setActiveSize(index);
     }
 
     return (
@@ -21,15 +31,35 @@ const PizzaBlock = (props) => {
             <div className="pizza-block__selector">
                 <ul>
                     {
-                        types.map( (type, index) => (
-                            <li onClick={ () => onSelectType(index) } className={activeType === index ? 'active' : '' }>{type}</li>
+                        availableTypes.map((type, index) => (
+                            <li onClick={() => onSelectType(index)}
+                                key={type}
+                                /*className={activeType === index ? 'active' : ''}>*/
+                                className={classNames({
+                                    active: activeType === index,
+                                    disabled: !props.types.includes(index)
+                                })}>
+                                {type}
+                            </li>
                         ))
                     }
                 </ul>
                 <ul>
-                    <li className="active">26 cm.</li>
+                    {/*                    <li className="active">26 cm.</li>
                     <li className="disabled">30 cm.</li>
-                    <li>40 cm.</li>
+                    <li>40 cm.</li>*/}
+                    {
+                        availableSizes.map((size, index) => (
+                            <li onClick={() => onSelectSize(index)}
+                                key={size}
+                                className={classNames({
+                                    active: activeSize === index,
+                                    disabled: !props.sizes.includes(size)
+                                })}>
+                                {size} cm.
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
             <div className="pizza-block__bottom">
@@ -53,6 +83,25 @@ const PizzaBlock = (props) => {
             </div>
         </div>
     )
+}
+
+
+
+PizzaBlock.propTypes = {
+    name: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    sizes: PropTypes.arrayOf(PropTypes.number).isRequired,
+    types: PropTypes.arrayOf(PropTypes.number).isRequired,
+    onClick: PropTypes.func
+};
+
+PizzaBlock.defaultProps = {
+    name: 'SORRY, NAME PIZZA ERROR',
+    imageUrl: 'https://lh3.googleusercontent.com/proxy/m3teYfNrPNQvRhlXeax8aJe51Hf5PCLoj5XwRNF17XgPIERnGHo6xzNTzNV6ale4bPBXTDEXBUDTRaJKjB2hXj15ovMJ9Q5kaDk',
+    price: 'SORRY, PRICE PIZZA ERROR',
+    sizes: [40],
+    types: [0]
 }
 
 export default PizzaBlock;

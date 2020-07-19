@@ -1,6 +1,6 @@
 import React from 'react';
 import Categories from "../components/Catigories/Catigories";
-import SortBy from "../components/SortBy/SortBy";
+import SortByComponent from "../components/SortBy/SortByComponent";
 import PizzaBlock from './../components/PizzaBlock/PizzaBlock';
 
 const Home = (props) => {
@@ -15,7 +15,7 @@ const Home = (props) => {
             <div className="container">
                 <div className="content__top">
                     <Categories items={items} />
-                    <SortBy sort={sort} />
+                    <SortByComponent store={props.store} sort={sort} />
                 </div>
                 <h2 className="content__title">All pizzas</h2>
                 <div className="content__items">

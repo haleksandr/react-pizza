@@ -4,8 +4,8 @@
       "id": 1,
       "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
       "name": "Double cheese",
-      "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "types": [0],
+      "sizes": [26, 30],
       "price": 10,
       "category": 0,
       "rating": 4
@@ -14,7 +14,7 @@
       "id": 2,
       "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
       "name": "Margarita",
-      "types": [0, 1],
+      "types": [1],
       "sizes": [26, 30, 40],
       "price": 8,
       "category": 0,
@@ -35,7 +35,7 @@
       "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
       "name": "Double meat",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [30, 40],
       "price": 7,
       "category": 0,
       "rating": 4
