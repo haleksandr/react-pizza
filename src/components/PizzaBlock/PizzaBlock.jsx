@@ -10,8 +10,6 @@ const PizzaBlock = (props) => {
     const availableTypes = ['thin', 'traditional'];
     const availableSizes = [26, 30, 40];
 
-    console.log(availableSizes, availableTypes);
-
     const onSelectType = (index) => {
         setActiveType(index);
     };
@@ -34,7 +32,6 @@ const PizzaBlock = (props) => {
                         availableTypes.map((type, index) => (
                             <li onClick={() => onSelectType(index)}
                                 key={type}
-                                /*className={activeType === index ? 'active' : ''}>*/
                                 className={classNames({
                                     active: activeType === index,
                                     disabled: !props.types.includes(index)
@@ -45,9 +42,6 @@ const PizzaBlock = (props) => {
                     }
                 </ul>
                 <ul>
-                    {/*                    <li className="active">26 cm.</li>
-                    <li className="disabled">30 cm.</li>
-                    <li>40 cm.</li>*/}
                     {
                         availableSizes.map((size, index) => (
                             <li onClick={() => onSelectSize(index)}
@@ -87,7 +81,7 @@ const PizzaBlock = (props) => {
 
 
 
-PizzaBlock.propTypes = {
+/*PizzaBlock.propTypes = {
     name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
@@ -102,6 +96,6 @@ PizzaBlock.defaultProps = {
     price: 'SORRY, PRICE PIZZA ERROR',
     sizes: [40],
     types: [0]
-}
+}*/
 
 export default PizzaBlock;

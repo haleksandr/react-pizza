@@ -1,11 +1,12 @@
 const SORT = 'SORT';
+const SET_CATEGORY = 'SET_CATEGORY';
 
 let initialState = {
     category: 0,
     sortBy: 'popular'
 };
 
-const usersReducer = (state = initialState, action) => {
+const filterReducer = (state = initialState, action) => {
 
     let stateCopy;
 
@@ -15,12 +16,30 @@ const usersReducer = (state = initialState, action) => {
                 ...state,
                 sortBy: action.payload
             }
+        case SET_CATEGORY:
+            return {
+                ...state,
+                category: action.payload
+            }
+        default:
+            return state;
     }
+
+
 };
 
-export let onSelectSortAC = (index) => {
+export let onSelectSortAC = (name) => {
     return {
         type: SORT,
-        index
+        payload: name
     }
 }
+
+export let setCategoryAC = (categoryIndex) => {
+    return {
+        type: SET_CATEGORY,
+        payload: categoryIndex
+    }
+}
+
+export default filterReducer;

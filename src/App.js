@@ -1,42 +1,37 @@
 import React, {useState, useEffect} from 'react';
 import {Route} from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import './App.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import {setPizzas} from "./redux/pizzas-reducer";
 
-function App(props) {
 
-    const [pizzas, setItemsPizzas] = useState([]);
+function App() {
 
-    useEffect( () => {
+    const dispatch = useDispatch();
 
-        /*fetch('http://localhost:3000/db.json')
-            .then( (resp) => resp.json())
-            .then( (json) => {
-                setItemsPizzas(json.pizzas);
-            } );*/
 
+    useEffect(() => {
         axios.get('http://localhost:3000/db.json').then(({data}) => {
-            setItemsPizzas(data.pizzas);
-        } )
+            dispatch(setPizzas(data.pizzas));
+        });
+    }, []);
 
-    }, [] );
-
-    console.log('pizzas from APP: ' + pizzas);
 
     return (
         <div className="App">
             <div className="wrapper">
-                <Header />
+                <Header/>
                 <div className="content">
-                    <Route exact path="/" render={ () => <Home store={props.store} pizzas={pizzas} /> } />
-                    <Route exact path="/cart.html" component={Cart} />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/cart.html" component={Cart}/>
                 </div>
             </div>
         </div>
-    );
-}
+    )
+};
 
 export default App;

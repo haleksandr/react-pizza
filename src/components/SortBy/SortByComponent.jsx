@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import SortBy from "./SortBy";
-import {onSelectSortAC} from '../../redux/filter-reducer';
+import {onSelectSortAC, setCategoryAC} from '../../redux/filter-reducer';
 
 let mapStateToProps = (state) => {
     return {}
@@ -9,8 +9,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        onSelectSort: (index) => {
-            dispatch(onSelectSortAC(index));
+        onSelectSort: (name) => {
+            dispatch(onSelectSortAC(name));
+        },
+        onSelectCategory: (categoryIndex) => {
+            dispatch(setCategoryAC(setCategoryAC(categoryIndex)))
         }
     }
 };
