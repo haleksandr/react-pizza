@@ -1,11 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
 
-const SortBy = (props) => {
-
+const SortBy = React.memo(function SortBy(props) {
     const [visiblePopup, setVisiblePopup] = useState(false);
     const [activeItem, setActiveItem] = useState(0);
     const sortRef = useRef();
-    const activeLabel = props.sort[activeItem];
+    const activeLabel = props.items[activeItem];
 
     useEffect(() => {
         document.body.addEventListener('click', handleOutsideClick);
@@ -46,20 +45,22 @@ const SortBy = (props) => {
                     <b>Sort by:</b>
                     <span onClick={toggleSortPopup}>{activeLabel}</span>
                 </div>
-                {visiblePopup && <div className="sort__popup">
-                    <ul>
-                        {
-                            props.sort.map((element, index) => (
-                                <li onClick={ () => {onSelectSort(index)} }
-                                    key={`${element} ${index}`}
-                                    className={activeItem === index ? 'active' : ''}>{element}</li>
-                            ))
-                        }
-                    </ul>
-                </div>}
+                {
+                    visiblePopup && <div className="sort__popup">
+                        <ul>
+                            {
+                                props.items.map((element, index) => (
+                                    <li onClick={ () => onSelectSort(index) }
+                                        key={`${element} ${index}`}
+                                        className={activeItem === index ? 'active' : ''}>{element}</li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+                }
             </div>
         </div>
     )
-};
+})
 
 export default SortBy;

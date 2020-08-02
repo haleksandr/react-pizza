@@ -21,11 +21,9 @@ const pizzasReducer = (state = initialState, action) => {
     }
 };
 
-export let setPizzas = (items) => {
-    return {
+export let setPizzasAC = (items) => ({
         type: SET_PIZZAS,
         payload: items
-    }
-}
+});
 
 export default pizzasReducer;

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {Route} from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -6,20 +6,19 @@ import './App.css';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
-import {setPizzas} from "./redux/pizzas-reducer";
+import {setPizzasAC} from "./redux/pizzas-reducer";
 
 
 function App() {
 
     const dispatch = useDispatch();
 
-
     useEffect(() => {
         axios.get('http://localhost:3000/db.json').then(({data}) => {
-            dispatch(setPizzas(data.pizzas));
+            dispatch(setPizzasAC(data.pizzas));
+            console.log('пиццы получены')
         });
     }, []);
-
 
     return (
         <div className="App">

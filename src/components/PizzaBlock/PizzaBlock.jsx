@@ -16,7 +16,7 @@ const PizzaBlock = (props) => {
 
     const onSelectSize = (index) => {
         setActiveSize(index);
-    }
+    };
 
     return (
         <div className="pizza-block">
