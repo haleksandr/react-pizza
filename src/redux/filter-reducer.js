@@ -1,9 +1,12 @@
-const SET_SORT = 'SET_SORT';
-const SET_CATEGORY = 'SET_CATEGORY';
+const SET_SORT = 'SET-SORT';
+const SET_CATEGORY = 'SET-CATEGORY';
 
 let initialState = {
-    category: 0,
-    sortBy: 'popularity'
+    category: null,
+    sortBy: {
+        type: 'popular',
+        order: 'desc'
+    }
 };
 
 const filterReducer = (state = initialState, action) => {

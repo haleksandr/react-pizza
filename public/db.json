@@ -8,7 +8,7 @@
       "sizes": [26, 30],
       "price": 10,
       "category": 0,
-      "rating": 4
+      "rating": 3
     },
     {
       "id": 2,
@@ -32,6 +32,126 @@
     },
     {
       "id": 4,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double meat",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 7,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 5,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double cheese",
+      "types": [0],
+      "sizes": [26, 30],
+      "price": 10,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 6,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Margarita",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 8,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 7,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Karbonara",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 12,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 8,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double meat",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 7,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 9,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double cheese",
+      "types": [0],
+      "sizes": [26, 30],
+      "price": 10,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Margarita",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 8,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Karbonara",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 12,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 12,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double meat",
+      "types": [0, 1],
+      "sizes": [30, 40],
+      "price": 7,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 13,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Double cheese",
+      "types": [0],
+      "sizes": [26, 30],
+      "price": 10,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 14,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Margarita",
+      "types": [1],
+      "sizes": [26, 30, 40],
+      "price": 8,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 15,
+      "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
+      "name": "Karbonara",
+      "types": [0, 1],
+      "sizes": [26, 30, 40],
+      "price": 12,
+      "category": 0,
+      "rating": 4
+    },
+    {
+      "id": 15,
       "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg",
       "name": "Double meat",
       "types": [0, 1],

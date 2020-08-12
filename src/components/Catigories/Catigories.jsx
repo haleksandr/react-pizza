@@ -5,8 +5,12 @@ const Categories = React.memo(function Categories(props) {
     return (
         <div className="categories">
             <ul>
+                <li className={props.activeCategory === null ? 'active' : ''}
+                onClick={ () => props.onClickCategory(null) }>
+                    All
+                </li>
                 {
-                    props.items.map((element, index) => (
+                    props.items && props.items.map((element, index) => (
                         <li onClick={() => props.onClickCategory(index)}
                             key={`${element} ${index} `}
                             className={props.activeCategory === index ? 'active' : ''}>{element}</li>
@@ -18,7 +22,7 @@ const Categories = React.memo(function Categories(props) {
 })
 
 Categories.propTypes = {
-    activeCategory: PropTypes.number.isRequired,
+    // activeCategory: PropTypes.number.isRequired,
     items: PropTypes.arrayOf(PropTypes.object),
     onClickCategory: PropTypes.func
 }

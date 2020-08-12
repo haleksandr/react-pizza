@@ -3,17 +3,15 @@ import PropTypes from 'prop-types';
 
 const SortBy = React.memo(function SortBy(props) {
 
-    console.log(props);
-
     const [visiblePopup, setVisiblePopup] = useState(false);
     const sortRef = useRef();
-    const activeLabel = props.items.find( (obj) => obj.type === props.activeSort).name;
+    const activeLabel = props.items.find(obj => obj.type === props.activeSort).name;
 
     useEffect(() => {
         document.body.addEventListener('click', handleOutsideClick);
-    }, [])
+    }, []);
 
-    const toggleSortPopup = () => {
+    const toggleVisiblePopup = () => {
         setVisiblePopup(!visiblePopup)
     };
 
@@ -24,16 +22,18 @@ const SortBy = React.memo(function SortBy(props) {
     };
 
     const onSelectSort = (index) => {
-        props.onClickItem(index);
+        if (props.onClickItem) {
+            props.onClickItem(index);
+        }
         setVisiblePopup(false);
-    }
+    };
 
     return (
         <div>
             <div ref={sortRef} className="sort">
                 <div className="sort__label">
                     <svg
-                        className={ visiblePopup ? 'rotated' : '' }
+                        className={visiblePopup ? 'rotated' : ''}
                         width="10"
                         height="6"
                         viewBox="0 0 10 6"
@@ -46,16 +46,16 @@ const SortBy = React.memo(function SortBy(props) {
                         />
                     </svg>
                     <b>Sort by:</b>
-                    <span onClick={toggleSortPopup}>{activeLabel}</span>
+                    <span onClick={toggleVisiblePopup}>{activeLabel}</span>
                 </div>
                 {
                     visiblePopup && <div className="sort__popup">
                         <ul>
                             {
-                                props.items.map((element, index) => (
-                                    <li onClick={ () => onSelectSort(element.type) }
-                                        key={`${element.type} ${index}`}
-                                        className={props.activeSort === element.type ? 'active' : ''}>{element}</li>
+                                props.items.map((obj, index) => (
+                                    <li onClick={() => onSelectSort(obj)}
+                                        key={`${obj.type} ${index}`}
+                                        className={props.activeSort === obj.type ? 'active' : ''}>{obj.name}</li>
                                 ))
                             }
                         </ul>
@@ -64,10 +64,12 @@ const SortBy = React.memo(function SortBy(props) {
             </div>
         </div>
     )
-})
+});
 
 SortBy.propTypes = {
-    activeSort: PropTypes.string.isRequired
+    // activeSort: PropTypes.oneOf([PropTypes.number, null]).isRequired,
+    onClickItem: PropTypes.func.isRequired,
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 SortBy.defaultProps = {
